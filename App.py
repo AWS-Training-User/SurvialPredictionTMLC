@@ -16,7 +16,7 @@ with st.form("prediction_form"):
     age = st.slider("Age: ", 20, 100, value=20)
     bmi = st.slider("BMI: ", 20, 100, value=20, format="%d")
     j_3 = st.number_input("apache_3j_diagnosis: ")
-    ventilated = st.number_input("Datause: (0 or 1)")
+    ventilated = st.number_input("Whether the patient was invasively ventilated ?: (0 or 1)")
     
     
     heartrate = st.number_input("Heart_rate: ")
@@ -24,8 +24,8 @@ with st.form("prediction_form"):
     spO2 = st.number_input("SP O2: ")
     Temp = st.number_input("Temp: ")
     
-    hos_mor = st.slider("apache_4a_hospital_death_prob: ", 0, 1, value=0)
-    icu_mor = st.slider("apache_4a_icu_death_prob: ", 0, 1, value=0)
+    hos_mor = st.number_input("apache_4a_hospital_death_prob(0 to 1): ")
+    icu_mor = st.number_input("apache_4a_hospital_icu_prob(0 to 1): ")
     
     
     
@@ -48,4 +48,4 @@ if submit_val:
 
 
     st.header("Here are the results:")
-    st.success(f"Prediction (0 indicated death, 1 indicated survial):")
+    st.success(f"Prediction (0 indicated death, 1 indicated survial):  {value}")
