@@ -48,4 +48,10 @@ if submit_val:
 
 
     st.header("Here are the results:")
-    st.success(f"Prediction (0 indicated death, 1 indicated survial):  {value}")
+    
+    if value ==0:
+        st.success("Patient will survive")
+        
+    else:
+        st.success("Patient may not survive")
+        
